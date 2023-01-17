@@ -1,0 +1,563 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Rubik', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(80, 80, 80, 0.170);
+}
+
+.container{
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    height: 600px;
+}
+
+.steps{
+    background-image: url("/assets/images/bg-sidebar-desktop.svg");
+    width: 264px;
+    margin: 20px;
+    padding-top: 30px;
+    padding-left: 30px;
+    border-radius: 10px;
+    list-style-type: none;
+}
+
+.step-panel{
+    display: flex;
+    align-items: center;
+}
+
+.current-number{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 1px solid white;
+    border-radius: 100px;
+    width: 35px;
+    height: 35px;
+}
+
+.step{
+    margin: 20px;
+    color: white;
+}
+
+.current-step{
+    font-weight: 100;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.desc{
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.info{
+    display: none; /*   flex    */
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 500px;
+    padding: 25px;
+    padding-right: 50px;
+}
+
+.step-transition{
+    animation: fade ease-in-out 0.5s;
+}
+
+@keyframes fade{
+    0%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+
+.personal{
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: hsl(213, 96%, 18%);
+    margin-bottom: 10px;
+}
+
+.additional{
+    font-size: 16px;
+    color: hsl(231, 11%, 63%);
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-bottom: 100px;
+    width: 100%;
+}
+
+.form label{
+    font-size: 16px;
+    font-weight: bold;
+    color: hsl(213, 96%, 18%);
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.form input{
+    width: 100%;
+    height: 45px;
+    border: 1px solid hsl(231, 11%, 63%);
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: hsl(213, 96%, 18%);
+}
+
+.next-step{
+    align-self: flex-end;
+    width: 100px;
+    height: 40px;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    background: hsl(213, 96%, 18%);
+    font-weight: 800;
+    border: none;
+    border-radius: 10px;
+    transition: .5s ease-in-out;
+}
+
+.next-step:hover{
+    filter: brightness(150%);
+    cursor: pointer;
+}
+
+.select-plan{
+    display: none;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 500px;
+    padding: 25px;
+    padding-right: 50px;
+}
+
+.select{
+    display: flex;
+    margin-top: 50px;
+}
+
+.plan{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 140px;
+    height: 160px;
+    border: 1px solid hsl(231, 11%, 63%);
+    margin-right: 10px;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.2s ease-in-out;
+}
+
+.plan:hover{
+    border: 1px solid hsl(213, 96%, 18%);
+    cursor: pointer;
+}
+
+.plan-active{
+    border: 1px solid hsl(213, 96%, 18%);
+    transform: scale(102%);
+}
+
+.plan img{
+    width: 40px;
+}
+
+.switch{
+    align-self: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 200px;
+}
+
+.switch-option{
+    font-size: 16px;
+    font-weight: bold;
+    transition: ease-in-out .2s;
+}
+
+.toggle-bg{
+    display: flex;
+    background: hsl(213, 96%, 18%);
+    width: 40px;
+    height: 19px;
+    border-radius: 10px;
+    padding: 2px;
+}
+
+.toggle{
+    margin: 1.5px;
+    margin-left: 2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    border: none;
+    transition: .2s ease-in-out;
+}
+
+.toggle:hover{
+    cursor: pointer;
+}
+
+.toggle-active{
+    transform: translateX(18px);
+}
+
+.option-disabled{
+    color: gray;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.prev-step{
+    width: 100px;
+    height: 40px;
+    color: hsl(213, 96%, 18%);
+    font-size: 12px;
+    font-weight: 500;
+    background: white;
+    font-weight: 800;
+    border: none;
+    border-radius: 10px;
+    transition: .5s ease-in-out;
+}
+
+.prev-step:hover{
+    color: white;
+    background: hsl(213, 96%, 18%);
+    cursor: pointer;
+}
+
+.add-ons{
+    display: none; /*flex*/
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 25px;
+    padding-right: 50px;
+    width: 500px;
+
+}
+
+.add-on-selection{
+    display: flex;
+    flex-direction: column;
+}
+
+.add-on{
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid hsl(213, 96%, 18%);
+    border-radius: 10px;
+}
+
+.add-on-check:hover{
+    cursor: pointer;
+}
+
+.add-on-check-clicked{
+    background: blue;
+    color: black;
+    transform: scale(130%);
+}
+
+.add-on-title{
+    display: flex;
+}
+
+.add-on-title div{
+    margin-left: 20px;
+}
+
+.summary{
+    display: none; /*flex*/
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 500px;
+    padding: 25px;
+    padding-right: 50px;
+}
+
+.sum-up{
+    margin-top: 20px;
+    background-color: hsl(217, 100%, 97%);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.sum-up-panel{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.sum-up-panel div div{
+    display: flex;
+    align-items: center;
+}
+
+.sum-up-plan{
+    color: hsl(213, 96%, 18%);
+    margin-right: 4px;
+}
+
+.sum-up-panel a{
+    text-decoration: none;
+    color:hsl(213, 96%, 18%);
+    font-size: 14px;
+}
+
+.sum-up-panel a:hover{
+    text-decoration: underline;
+    color: blue;
+}
+
+.sum-up hr{
+    background: hsl(229, 24%, 87%);
+    margin-bottom: 10px;
+}
+
+.sum-up-price{
+    color:hsl(213, 96%, 18%);
+}
+
+.sum-up-add-ons{
+    min-height: 150px;
+    gap: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sum-up-add-on-panel{
+    display: flex;
+    justify-content: space-between;
+    font-size: 17px;
+    color: hsl(231, 11%, 63%);
+}
+
+.sum-up-total-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color:hsl(231, 11%, 63%);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.sum-up-final-price{
+    font-size: 20px;
+    font-weight: bold;
+    color: hsl(213, 96%, 18%);
+}
+
+.active{
+    display: flex;
+}
+
+.number-active{
+    background: hsl(228, 100%, 84%);
+    color: hsl(213, 96%, 18%);
+    border: none;
+    transition: 1s ease-in-out;
+    box-shadow: 0px 0px 50px 5px hsl(228, 100%, 84%);
+    animation: glowing 3s ease-in-out forwards infinite;
+}
+
+@keyframes glowing{
+    100%{
+        filter: brightness(100%);
+        transform: scale(100%);
+    }
+    50%{
+        filter: brightness(120%);
+        transform: scale(90%);
+    }
+}
+
+@media only screen and (max-width: 850px){
+
+    .container{
+        width: 95%;
+        margin: 5px;
+    }
+
+    .steps{
+        width: 20%;
+        padding: 0;
+        padding-top: 10px;
+    }
+
+    .step-panel{  
+        height: 50px;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        margin-top: 5px;
+        padding: 15px;
+    }
+
+    .step{
+        display: none;
+    }
+
+    .select{
+        margin-top: 25px;
+        padding: 0;
+        flex-direction: column;
+        width: 110%;
+        
+    }
+
+    .plan{
+        height: 80px;
+        width: 100%;
+        flex-direction: row;
+        justify-content: flex-start;
+        margin: 5px;
+        
+    }
+
+    .plan img{
+        margin-right: 10px;
+    }
+
+    .plan-title{
+        margin-bottom: 3px;
+    }
+
+    .switch{
+        margin-top: 30px;
+    }
+
+    .buttons{
+        margin-top: 50px;
+    }
+
+    .step-transition{
+        justify-content: flex-start;
+    }
+
+    .add-on-selection{
+        margin-top: 30px;
+    }
+
+    .add-on-price{
+        font-size: 13px;
+    }
+
+}
+
+@media only screen and (max-width: 435px){
+
+    .container{
+        margin-top: -60px;
+        width: 90%;
+    }
+
+    .steps{
+        background-image: url("/assets/images/bg-sidebar-mobile.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 200px;
+        z-index: -100;
+        padding-bottom: 50px;
+        padding-right: 40px;
+        margin: 0;
+        border-radius: 0px;
+    }
+
+    .step{
+        display: none;
+    }
+
+    .info{
+        width: 160%;
+        padding-right: 25px;
+    }
+
+    .switch{
+        margin-top: 50px;
+    }
+
+    .buttons{
+        position: absolute;
+        margin: 0;
+        bottom: 0;
+        left: 0;
+        background-color: white;
+        align-items: center;
+        justify-content: space-around;
+        height: 100px;
+    }
+
+    .next-step{
+        align-self: center;
+    }
+
+    .add-ons{
+        padding-right: 20px;
+    }
+
+    .add-on-selection{
+        margin-top: 25px;
+    }
+
+    .summary{
+        padding-right: 20px;
+    }
+
+    .sum-up{
+        margin-top: 30px;
+    }
+}

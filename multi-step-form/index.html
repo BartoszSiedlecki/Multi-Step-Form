@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <ol class="steps">
+            <div class="step-panel">
+                <div class="current-number number-active" name="step-numbers">1</div>
+                <li class="step">
+                    <h3 class="current-step">Step 1</h3>
+                    <h4 class="desc">your info</h4>
+                </li>
+            </div>
+            <div class="step-panel">
+                <div class="current-number" name="step-numbers">2</div>
+                <li class="step">
+                    <h3 class="current-step">Step 2</h3>
+                    <h4 class="desc">select plan</h4>
+                </li>
+            </div>
+            <div class="step-panel">
+                <div class="current-number" name="step-numbers">3</div>
+                <li class="step">
+                    <h3 class="current-step">Step 3</h3>
+                    <h4 class="desc">add-ons</h4>
+                </li>
+            </div>
+            <div class="step-panel">
+                <div class="current-number" name="step-numbers">4</div>
+                <li class="step">
+                    <h3 class="current-step">Step 4</h3>
+                    <h4 class="desc">summary</h4>
+                </li>
+            </div>
+        </ol>
+
+            <section class="info step-transition active" data-step>
+                <h1 class="personal">Personal info</h1>
+                <h2 class="additional">Please provide your name, email address, and phone number.</h2>
+                <form class="form">
+                    <label>Name</label>
+                    <input type="text" value="e.g. Stephen King" name="one-input">
+                    <label>Email Address</label>
+                    <input type="email" value="e.g. stephenking@lorem.com" name="one-input">
+                    <label>Phone Number</label>
+                    <input type="text" value="e.g. +1 234 567 890" name="one-input">
+                </form>
+                <button class="next-step" type="button" name="next-step">Next Step</button>
+            </section>
+
+            <section class="select-plan step-transition" data-step>
+                <h1 class="personal">Select your plan</h1>
+                <h2 class="additional">You have the option of monthly or yerly billing.</h2>
+                <div class="select">
+                    <div class="plan arcade" name="plan-select">
+                        <img src="/assets/images/icon-arcade.svg" alt="arcade-icon">
+                        <div>
+                            <h4 class="plan-title">Arcade</h5>
+                            <h5 class="plan-more">$9/mo</span>
+                        </div>
+                    </div>
+                    <div class="plan advanced" name="plan-select">
+                        <img src="/assets/images/icon-advanced.svg" alt="advanced-icon">
+                        <div>
+                            <h4 class="plan-title">Advanced</h5>
+                            <h5 class="plan-more">$12/mo</span>
+                        </div>
+                    </div>
+                    <div class="plan pro" name="plan-select">
+                        <img src="/assets/images/icon-pro.svg" alt="pro-icon">
+                        <div>
+                            <h4 class="plan-title">Pro</h5>
+                            <h5 class="plan-more">$15/mo</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="switch">
+                    <span class="switch-option" name="switch-option">Monthly</span>
+                    <div class="toggle-bg">
+                        <button class="toggle"></button>
+                    </div>
+                    <span class="switch-option option-disabled" name="switch-option">Yearly</span>
+                </div>
+                <div class="buttons">
+                    <button class="prev-step" type="button" name="prev-step">Go Back</button>
+                    <button class="next-step get-plan" type="button" name="next-step">Next Step</button>
+                </div>
+            </section>
+
+            <section class="add-ons step-transition" data-step>
+                <h1 class="personal">Pick add-ons</h1>
+                <h2 class="additional">Add-ons help enhance your gaming expirience.</h2>
+                <div class="add-on-selection">
+                    <div class="add-on">
+                        <div class="add-on-title">
+                            <input class="add-on-check online-service" type="checkbox" name="add-on-checkboxes">
+                            <div>
+                                <h4 class="add-on-name">Online service</h4>
+                                <h5 class="add-on-desc">Acces to multiplayer games</h5>
+                            </div>
+                        </div>
+                        <div class="add-on-price">+$1/mo</div>
+                    </div>
+                    <div class="add-on">
+                        <div class="add-on-title">
+                            <input class="add-on-check larger-storage" type="checkbox" name="add-on-checkboxes">
+                            <div>
+                                <h4 class="add-on-name">Larger storage</h4>
+                                <h5 class="add-on-desc">Extra 1TB of cloud save</h5>
+                            </div>
+                        </div>
+                        <div class="add-on-price">+$2/mo</div>
+                    </div>
+                    <div class="add-on">
+                        <div class="add-on-title">
+                            <input class="add-on-check customizable-profile" type="checkbox" name="add-on-checkboxes">
+                            <div>
+                                <h4 class="add-on-name">Customizable Profile</h4>
+                                <h5 class="add-on-desc">Custom theme on your profile</h5>
+                            </div>
+                        </div>
+                        <div class="add-on-price">+$2/mo</div>
+                    </div>
+                    <div class="buttons">
+                        <button class="prev-step" type="button" name="prev-step">Go Back</button>
+                        <button class="next-step" type="button" name="next-step">Next Step</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="summary step-transition" data-step>
+                <h1 class="personal">Finishing up</h1>
+                <h2 class="additional">Double-check everything looks OK before confirming.</h2>
+                <div class="sum-up">
+                    <div class="sum-up-panel">
+                        <div>
+                            <div>
+                                <h4 class="sum-up-plan" id="sub-plan"><h5 class="sum-up-plan" id="sub-time"></h5></h4>
+                            </div>
+                            <a id="change-plan-btn" href="#">Change</a>
+                        </div>
+                        <h4 class="sum-up-price" id="sub-price"></h4>
+                    </div>
+                    <hr>
+                    <div class="sum-up-add-ons">
+                        <div class="sum-up-add-on-panel" id="online-service"></div>
+                        <div class="sum-up-add-on-panel" id="larger-storage"></div>
+                        <div class="sum-up-add-on-panel" id="customizable-profile"></div>                   
+                    </div>
+                    <div class="sum-up-total-price">
+                        <div id="total-per-cont"></div>
+                        <div class="sum-up-final-price" id="final-price-cont"></div>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="prev-step" type="button" name="prev-step">Go Back</button>
+                    <button class="next-step" type="submit" name="next-step">Confirm</input>
+                </div>
+            </section>
+
+    </div>
+</body>
+</html>
