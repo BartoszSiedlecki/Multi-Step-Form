@@ -106,9 +106,16 @@ body{
 .form{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     margin-top: 15px;
-    margin-bottom: 100px;
     width: 100%;
+    height: 100%;
+}
+
+.form-container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .form label{
@@ -394,10 +401,6 @@ body{
     color: hsl(213, 96%, 18%);
 }
 
-.active{
-    display: flex;
-}
-
 .number-active{
     background: hsl(228, 100%, 84%);
     color: hsl(213, 96%, 18%);
@@ -405,6 +408,41 @@ body{
     transition: 1s ease-in-out;
     box-shadow: 0px 0px 50px 5px hsl(228, 100%, 84%);
     animation: glowing 3s ease-in-out forwards infinite;
+}
+
+.thank-you-page{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 2rem;
+    width: 500px;
+}
+
+.thank-you-page-header{
+    color: hsl(213, 96%, 18%);
+    font-size: 2rem;
+}
+
+.thank-you-page-sub{
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 1rem;
+}
+
+.thank-you-page-button{
+    height: 2.5rem;
+    width: 80%;
+    border: none;
+    background: hsl(213, 96%, 18%);
+    color: white;
+    border-radius: 10px;
+    cursor: not-allowed;
+}
+
+.active{
+    display: flex;
 }
 
 @keyframes glowing{

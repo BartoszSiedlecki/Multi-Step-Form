@@ -47,15 +47,18 @@
             <section class="info step-transition active" data-step>
                 <h1 class="personal">Personal info</h1>
                 <h2 class="additional">Please provide your name, email address, and phone number.</h2>
-                <form class="form">
-                    <label>Name</label>
-                    <input type="text" value="e.g. Stephen King" name="one-input">
-                    <label>Email Address</label>
-                    <input type="email" value="e.g. stephenking@lorem.com" name="one-input">
-                    <label>Phone Number</label>
-                    <input type="text" value="e.g. +1 234 567 890" name="one-input">
+                <form class="form" id="personal-info">
+                    <div class="form-container">
+                        <label>Name</label><div class="form-container">
+                        <input type="text" placeholder="e.g. Stephen King" name="one-input" required>
+                        <label>Email Address</label>
+                        <input type="email" placeholder="e.g. stephenking@lorem.com" name="one-input" required>
+                        <label>Phone Number</label>
+                        <input type="text" placeholder="e.g. +1 234 567 890" name="one-input" required>
+                    </div>
+                    <button class="next-step" type="submit">Next Step</button>
                 </form>
-                <button class="next-step" type="button" name="next-step">Next Step</button>
+                
             </section>
 
             <section class="select-plan step-transition" data-step>
@@ -168,6 +171,11 @@
                 </div>
             </section>
 
+            <section class="thank-you-page step-transition" data-step>
+                <h1 class="thank-you-page-header">Thank you for your order</h1>
+                <h2 class="thank-you-page-sub">Confirmation has been sent to your email</h2>
+                <button class="thank-you-page-button">Go back to the main website</button>
+            </section>
     </div>
 </body>
 </html>

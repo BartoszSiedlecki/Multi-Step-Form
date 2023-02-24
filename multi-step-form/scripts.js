@@ -18,6 +18,13 @@ const customizableProfileCont = document.getElementById("customizable-profile")
 const changePlanBtn = document.getElementById("change-plan-btn")
 const totalPerCont = document.getElementById("total-per-cont")
 const finalPriceCont = document.getElementById("final-price-cont")
+const personalInfo = document.getElementById("personal-info")
+
+formData = {
+    name: "",
+    email: "",
+    number: ""
+}
 
 let currentStep = 0
 
@@ -59,16 +66,23 @@ switchToggle.addEventListener("click", toggleSub)
 
 changePlanBtn.addEventListener("click", changePlan)
 
+personalInfo.addEventListener("submit", e => {
+    e.preventDefault()
+    let data = []
+    stepOneInputs.forEach(input => {
+        data.push(input.value)
+    })
+    formData.name = data[0]
+    formData.email = data[1]
+    formData.number = data[2]
+    nextStep()
+})
 
 function nextStep(){
-    if(stepOneInputs[0].value !== "" && stepOneInputs[1].value !== "" && stepOneInputs[2].value !== ""){
-        formStep[currentStep].classList.toggle("active")
-        stepNumbers[currentStep].classList.toggle("number-active")
-        currentStep += 1
-        changePage()
-    }else{
-        alert("fill up the inputs in order to proceed")
-    }
+    formStep[currentStep].classList.toggle("active")
+    stepNumbers[currentStep].classList.toggle("number-active")
+    currentStep += 1
+    changePage()
     checkForAddons()
     sumUpPrice()
 }
